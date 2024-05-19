@@ -1,6 +1,4 @@
-import Node from './nodeClass.mjs';
-
-class LinkedList {
+class Node {
   // Head of List
   constructor(value = null, nextNode = null) {
     this.value = value;
@@ -13,7 +11,7 @@ class LinkedList {
     return this;
   }
   prepend(value) {
-    const node = new LinkedList(value, this);
+    const node = new Node(value, this);
 
     return node;
   }
@@ -108,14 +106,4 @@ class LinkedList {
   }
 }
 
-console.log(
-  new LinkedList('Old Head')
-    .prepend('New Head')
-    .append('Node')
-    .append('2Node')
-    .at(0)
-    .pop()
-    .append('3rdNode')
-    .insertAt('insertAt Node test', 2)
-    .removeAt()
-);
+export default Node;
